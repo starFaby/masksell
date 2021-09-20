@@ -1,0 +1,41 @@
+<h2 class="fontSize3 text-center">Productos</h2>
+<div class="row" *ngIf="!arrayDates; else mainContent">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-4 p-4 text-center mx-auto">
+                <mat-card class="cardImage">
+                    <mat-card-header>
+                        <mat-card-title>Ups..!</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <h2>Lo siento. No existen productos</h2>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template #mainContent>
+    <div class="row p-2">
+        <div class="col-md-4 p-4" *ngFor="let item of arrayDates">
+            <mat-card class="cardImage">
+                <!-- (click)="onSelectedCategoria(item.arreglo)"-->
+                <mat-card-header class="cardHeaderEdit p-2">
+                    <mat-card-title class="d-flex justify-content-center">{{item.nombre}}</mat-card-title>
+                </mat-card-header>
+                <hr>
+                <mat-card-content>
+                    <img mat-card-image src="{{item.img}}" alt="Image">
+                    <p>{{item.precio1}}</p>
+                    <p>{{item.precio2}}</p>
+                </mat-card-content>
+                <mat-card-footer>
+                    <mat-card-actions>
+                        <button mat-button>LIKE</button>
+                        <button mat-button>SHARE</button>
+                    </mat-card-actions>
+                </mat-card-footer>
+            </mat-card>
+        </div>
+    </div>
+</ng-template>

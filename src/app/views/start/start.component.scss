@@ -1,0 +1,12 @@
+.cardHeaderEdit{
+    box-shadow: 1px 7px 15px #a2a2a2;
+    margin: -25px -25px 0px -25px;
+    height: auto;
+    background: linear-gradient(-90deg, #393E41, #D3D0CB);
+}
+.cardImage{
+    cursor: pointer;
+}
+.cardImage:hover{
+    border: 1px solid #000;
+}
